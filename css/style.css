@@ -1,3 +1,9 @@
+*,
+::after,
+::before {
+    margin: 0;
+}
+
 body {
     font-family: "Roboto", sans-serif;
     color: #434455;
@@ -81,6 +87,32 @@ ul {
     padding: 0;
 }
 
+.menu-list {
+    position: relative;
+}
+
+.menu-list::after {
+    content: "";
+    width: auto;
+    height: 2px;
+    background-color: #404BBF;
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    transform: scaleX(0); 
+    transition: visibility 0s, transform 0.3s ease; 
+}
+
+.menu-list:active::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+
+
+
 
 .main-title {
     line-height: 1.07;
@@ -126,6 +158,24 @@ ul {
 
 .about-list {
     width: calc((100% - 48px) / 3);
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    background-color: #4D5AE5;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    content: "";
+}
+
+.about-list:hover .overlay {
+    transform: translateY(-34%);
 }
 
 .about > .container {
@@ -164,12 +214,20 @@ ul {
     padding: 0;
 }
 
+.content-icon {
+    background-color: #F4F4FD;
+    border: 1px solid #8E8f99;
+    border-radius: 4px;
+    padding: 24px 100px;
+}
+
 .content-list {
     width: calc((100% - 72px) / 4);   
 }
 
 .content-list > .name {
     margin-bottom: 8px;
+    margin-top: 8px;
 }
 
 .name {
@@ -242,7 +300,11 @@ button:focus {
 }
 
 .main-page {
-    background-color: #2E2F42;
+    background-image: linear-gradient( to bottom, rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(/images/main-image.jpg);
+    background-repeat: no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-position: center;
+    background-size: 1440px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -301,8 +363,13 @@ nav ul li a:focus {
     padding: 24px 0 24px;
 }
 
-.active-menu>a:active {
-    text-decoration: underline;
+
+.icon-menu{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
 }
 
 .logo {
@@ -329,17 +396,37 @@ nav ul li a:focus {
     margin: 0 auto;
     padding-right: 15px;
     padding-left: 15px;
+    display: flex;
+    gap: 120px;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .footer-logo {
     color: #F4F4FD;
 }
 
+.footer-list {
+    width: 208px;
+}
+
+.footer-links > .icon-menu {
+        display: inline-flex;
+        align-items: flex-start;
+        gap: 16px;
+}
+
+.footer-title {
+    font-weight: 500;
+    padding-bottom: 16px;
+    color: #fff;
+}
 
 .footer-text {
     color: #F4F4FD;
     margin: 0;
     max-width: 264px;
+    padding-top: 17.5px;
 }
 
 .footer {
