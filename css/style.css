@@ -328,7 +328,7 @@ button:focus {
 }
 
 .main-page {
-    background-image: linear-gradient( to bottom, rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(/images/main-image.jpg);
+    background-image: linear-gradient( to bottom, rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(../images/main-image.jpg);
     background-repeat: no-repeat;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     background-position: center;
