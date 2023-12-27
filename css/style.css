@@ -88,8 +88,11 @@ ul {
     padding: 0;
 }
 
+.menu-list {
+    position: relative;
+}
 
-.menu-list::after {
+.active-menu:hover::after {
     content: "";
     width: auto;
     height: 4px;
@@ -101,13 +104,11 @@ ul {
     border-radius: 2px;
     visibility: hidden;
     transform: scaleX(0); 
-    transition: visibility 0s, transform 0.3s ease; 
+    transition: visibility 0s, transform 0.3s ease;
+    color: #404BBF; 
 }
 
-.menu-list:active::after {
-    visibility: visible;
-    transform: scaleX(1);
-}
+
 
 .main-title {
     line-height: 1.07;
@@ -223,14 +224,6 @@ ul {
     padding: 120px 0;
 }
 
-.content > .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 112px;
-    margin-bottom: 8px;
-}
-
 .content-menu {
     flex-direction: row;
     display: flex;
@@ -245,6 +238,11 @@ ul {
     border: 1px solid #8E8f99;
     border-radius: 4px;
     padding: 24px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 112px;
+    margin-bottom: 8px;
 }
 
 .content-list {
@@ -328,7 +326,7 @@ button:focus {
 }
 
 .main-page {
-    background-image: linear-gradient( to bottom, rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(../images/main-image.jpg);
+    background-image: linear-gradient( to bottom, rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(/images/main-image.jpg);
     background-repeat: no-repeat;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     background-position: center;
@@ -348,14 +346,6 @@ button:focus {
     flex-direction: column;
 }
 
-nav ul li > a {
-    color: #2e2f42;
-}
-
-nav ul li a:hover,
-nav ul li a:focus {
-    color: #404BBF; 
-}
 
 .post {
     width: calc((100% - 72px) / 4);
@@ -388,7 +378,7 @@ nav ul li a:focus {
 }
 
 .active-menu {
-    position: relative;
+    
     font-weight: 500;
     line-height: 1.5;
     padding: 24px 0 24px;
@@ -397,7 +387,7 @@ nav ul li a:focus {
 }
 
 
-.icon-menu{
+.icon-menu {
     padding: 0;
     display: flex;
     align-items: center;
@@ -412,6 +402,7 @@ nav ul li a:focus {
 .icon-list {
     width: 40px;
     height: 40px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-link {
@@ -427,6 +418,11 @@ nav ul li a:focus {
 .icon-link:hover,
 .icon-link:focus {
     background-color: #404bbf;
+}
+
+.footer-links > .icon-menu > .icon-list > .icon-link:hover,
+.footer-links > .icon-menu > .icon-list > .icon-link:focus {
+    background-color: #31d0aa;
 }
 
 .logo {
