@@ -252,7 +252,7 @@ ul {
     padding: 0;
 }
 
- .visually-hidden {
+.visually-hidden {
     margin: -1px;
     padding: 0;
     height: 1px;
@@ -366,6 +366,18 @@ button:focus {
     padding: 24px 0 24px;
     color: #404bbf;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.active-menu:active::after {
+    position: absolute;
+    width: -webkit-fill-available;
+    content: '';
+    left: 0;
+    bottom: -1px;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
 }
 
 
