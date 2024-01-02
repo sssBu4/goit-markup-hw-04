@@ -369,7 +369,7 @@ button:focus {
 }
 
 
-.active-menu:active::after {
+.active-menu::after {
     position: absolute;
     width: -webkit-fill-available;
     content: '';
