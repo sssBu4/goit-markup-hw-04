@@ -676,7 +676,7 @@ textarea:focus {
     background-color: transparent;
     outline: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    border-color: #4D5AE5;
+    
 }
 
 .pravicy-link {
@@ -695,8 +695,7 @@ textarea:focus {
     fill: #2E2F42;
 }
 
-.input-content:focus,
-.backdrop-input:focus {
+.backdrop-input:focus + .modal-icon {
     fill: #4D5AE5;
 }
 
@@ -707,9 +706,6 @@ textarea:focus {
     color: #8E8F99;
     line-height: 1.17;
     letter-spacing: 0.48px;
-    display: flex;
-    gap: 8px;
-    align-items: center;
 }
 
 .pravicy-checked {
@@ -762,6 +758,7 @@ textarea:focus {
     align-items: center;
     display: inline-flex;
     width: 16px;
+    margin-right: 8px;
     height: 16px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 2px;
@@ -772,6 +769,7 @@ textarea:focus {
 }
 
 .icon-pravicy {
-    width: 16px;
-    height: 16px;
+    width: 10px;
+    height: 8px;
+    fill: transparent;
 }
