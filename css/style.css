@@ -662,6 +662,10 @@ textarea:focus {
     margin-bottom: 8px;
 }
 
+.container-textarea {
+    margin-bottom: 16px;
+}
+
 .backdrop-textarea {
     color: rgba(46, 47, 66, 0.4);
     font-size: 12px;
